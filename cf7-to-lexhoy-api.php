@@ -3,7 +3,7 @@
  * Plugin Name: Contact Form 7 to API - LexHoy
  * Plugin URI: https://lexhoy.com
  * Description: Envía los envíos de Contact Form 7 a la API de LexHoy para procesamiento de leads
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: LexHoy
  * Author URI: https://lexhoy.com
  * Text Domain: cf7-to-lexhoy-api
@@ -15,7 +15,9 @@ if (!defined('ABSPATH')) {
 }
 
 // Definir constantes
-define('CF7_LEXHOY_API_VERSION', '1.0.2');
+define('CF7_LEXHOY_API_VERSION', '1.0.3');
+
+// v1.0.3 - Prueba de actualización automática exitosa
 
 // ... (resto del código igual hasta el final) ...
 
