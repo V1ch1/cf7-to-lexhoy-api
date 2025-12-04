@@ -33,7 +33,7 @@ function cf7_lexhoy_init_updater() {
             
             // CONFIGURACIÓN DEL REPOSITORIO GITHUB
             // Cambia estos valores por tu usuario y repositorio real
-            $github_user = 'LexHoy'; 
+            $github_user = 'V1ch1'; 
             $github_repo = 'cf7-to-lexhoy-api';
             $access_token = ''; // Opcional: Solo para repositorios privados
             
