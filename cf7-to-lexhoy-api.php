@@ -144,11 +144,11 @@ function cf7_lexhoy_send_to_api($contact_form) {
         error_log('CF7 to LexHoy API v2.0.1: Enviando a Next.js: ' . print_r($data, true));
         
         // Enviar con header de seguridad
-        // 🆕 Cambiar a blocking = true para mejor feedback al usuario
+        // 🚀 Modo no-bloqueante para respuesta rápida al usuario
         $response = wp_remote_post($api_url, array(
             'method' => 'POST',
-            'timeout' => 30, // Reducido de 45 a 30 segundos
-            'blocking' => true, // Cambiado a true para esperar respuesta
+            'timeout' => 5, // Timeout corto ya que no esperamos respuesta
+            'blocking' => false, // No esperar respuesta - procesamiento asíncrono
             'headers' => array(
                 'Content-Type' => 'application/json',
                 'x-webhook-secret' => CF7_LEXHOY_WEBHOOK_SECRET,
