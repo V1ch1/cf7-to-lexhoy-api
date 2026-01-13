@@ -18,6 +18,32 @@ if (!defined('ABSPATH')) {
 define('CF7_LEXHOY_API_VERSION', '2.0.1');
 define('CF7_LEXHOY_WEBHOOK_SECRET', 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6');
 
+/**
+ * Inicializar actualizador desde GitHub
+ */
+add_action('init', 'cf7_lexhoy_init_updater');
+
+function cf7_lexhoy_init_updater() {
+    if (is_admin()) {
+        $updater_path = plugin_dir_path(__FILE__) . 'includes/class-plugin-updater.php';
+        
+        if (file_exists($updater_path)) {
+            require_once $updater_path;
+            
+            $github_user = 'V1ch1'; 
+            $github_repo = 'cf7-to-lexhoy-api';
+            $access_token = '';
+            
+            new CF7_LexHoy_Updater(
+                __FILE__, 
+                $github_user, 
+                $github_repo,
+                $access_token
+            );
+        }
+    }
+}
+
 // Hook para capturar envíos de Contact Form 7
 add_action('wpcf7_mail_sent', 'cf7_lexhoy_send_to_api', 10, 1);
 
